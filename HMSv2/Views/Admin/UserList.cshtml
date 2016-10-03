@@ -1,0 +1,45 @@
+﻿@model IEnumerable<HMSv2.Models.DB.User>
+
+@{
+    ViewBag.Title = "UserList";
+}
+
+<h2>List of current user in this system</h2>
+
+<p>
+    @Html.ActionLink("Add a new User", "AddUser")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Role)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Role)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "UserEdit", new { id=item.UserID }) |
+            @Html.ActionLink("Details", "UserDetails", new { id=item.UserID }) |
+            @Html.ActionLink("Delete", "UserDelete", new { id=item.UserID })
+        </td>
+    </tr>
+}
+
+</table>

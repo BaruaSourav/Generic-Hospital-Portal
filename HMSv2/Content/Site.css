@@ -1,0 +1,85 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.navibar{
+    background-color: white;
+}
+/*white font*/
+.fontss{
+    color:#009FDA;
+    left:330px;
+    position: relative;
+}
+.test1{
+    position: relative;
+    left:310px;
+    
+    color:#00b8e6;
+    font-weight:bold;
+}
+.test2{
+    position: relative;
+    left:300px;
+    
+    color:#00b8e6;
+    font-weight:bold;
+}
+.login{
+    /*left:10px;*/
+    
+    color:#009FDA;
+    font-weight:bold;
+}
+.register{
+    right:100px;
+    
+    color:#009FDA;
+}
+.date{
+    right:0px;
+    top:15px;
+    color:#0e56bf;
+}
+
+.body {
+    background-color: #f1f1f1;
+    
+}
+
+.tableH{
+    background-color:#afc5d6;
+}
+
+th{
+    color:#1297ff;
+}
+a {
+  transition: color .4s;
+  color: #265C83;
+}
+.brand {
+    align-content:flex-start;
+    right:50px;
+}
+
+rightal{
+    right:-500px;
+}
+.login1{
+    left:70px;
+}

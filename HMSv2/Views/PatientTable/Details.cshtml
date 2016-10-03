@@ -1,0 +1,76 @@
+﻿@model HMSv2.Models.DB.PatientTable
+
+@{
+    ViewBag.Title = "Patient Details";
+}
+
+<h2>Details of Patient</h2>
+
+<div>
+    <h4>Patient Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <h4>
+            <dt>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FirstName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.LastName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LastName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DOB)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DOB)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Phone)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Phone)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.District1.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.District1.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Plan.PlanName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Plan.PlanName)
+            </dd>
+        </h4>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit Patient info", "Edit", new { id = Model.PatientID }) |
+    @Html.ActionLink("See Patient List", "Index")
+</p>

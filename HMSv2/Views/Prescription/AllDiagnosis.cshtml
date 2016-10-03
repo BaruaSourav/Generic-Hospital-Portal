@@ -1,0 +1,75 @@
+﻿@model IEnumerable<HMSv2.Models.DB.Diagnosis>
+
+@{
+    ViewBag.Title = "All Diagnosis";
+}
+
+<h2>All Diagnosis List</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "AddDiagnose")
+</p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Symptoms)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiagnosisProvided)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfDiagnosis)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FollowUpRequired)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FollowUpDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Billing.BillAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PatientTable.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Physician.FirstName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Symptoms)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiagnosisProvided)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfDiagnosis)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FollowUpRequired)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FollowUpDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Billing.BillAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PatientTable.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Physician.FirstName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DiagnosisID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DiagnosisID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DiagnosisID })
+        </td>
+    </tr>
+}
+
+</table>

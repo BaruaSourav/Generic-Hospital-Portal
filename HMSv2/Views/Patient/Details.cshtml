@@ -1,0 +1,130 @@
+﻿@model HMSv2.Models.DB.PatientTable
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Patient Details </h2>
+
+<div>
+    <h4>Patient's Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DOB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DOB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.District1.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.District1.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Plan.PlanName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Plan.PlanName)
+        </dd>
+
+    </dl>
+</div>
+<div class="container">
+    <table class="table">
+        <tr class="tableH">
+            <th>
+                Symptoms
+            </th>
+            <th>
+                Diagnosis Provided
+            </th>
+            <th>
+                Bill
+            </th>
+            <th>
+                Administrated By
+            </th>
+            <th>
+               Follow Up Required
+            </th>
+            <th>
+                Follow Up Date
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.Diagnosis)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Symptoms)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiagnosisProvided)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Billing.BillAmount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Physician.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FollowUpRequired)
+                    
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FollowUpDate)
+                </td>
+                <td>
+
+                    @Html.ActionLink("Details", "Details", new { id = item.PatientID }, new { @class = "btn btn-primary" })
+
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+<p>
+    
+    @Html.ActionLink("Back to All Patient's List", "Index")
+</p>

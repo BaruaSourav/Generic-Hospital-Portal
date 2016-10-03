@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c785be50bb094f4d90e24aba63c6329f" Name="Diagram1" ZoomLevel="81">
+        <EntityTypeShape EntityType="HMS_DBModel.District" Width="1.5" PointX="2.625" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMS_DBModel.PatientTable" Width="1.5" PointX="5.5" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMS_DBModel.Plan" Width="1.5" PointX="2.875" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="HMS_DBModel.FK_PatientTable_District" ManuallyRouted="false" />
+        <AssociationConnector Association="HMS_DBModel.FK_PatientTable_Plan" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="HMS_DBModel.Billing" Width="1.5" PointX="10.25" PointY="2.125" />
+        <EntityTypeShape EntityType="HMS_DBModel.Diagnosis" Width="1.5" PointX="8" PointY="1.5" />
+        <EntityTypeShape EntityType="HMS_DBModel.Physician" Width="1.5" PointX="9.75" PointY="5.375" />
+        <AssociationConnector Association="HMS_DBModel.FK_Diagnosis_Billing" />
+        <AssociationConnector Association="HMS_DBModel.FK_Diagnosis_PatientTable" />
+        <AssociationConnector Association="HMS_DBModel.FK_Diagnosis_Physician" />
+        <EntityTypeShape EntityType="HMS_DBModel.User" Width="1.5" PointX="12.625" PointY="3.375" FillColor="255, 128, 0" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+
+@{
+    HMSv2.Models.EntityManager.UserManager um = new HMSv2.Models.EntityManager.UserManager();
+}
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - MSCS</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body class="body">
+    <nav class="navibar navbar navbar-fixed-top">
+        <ul class="nav navbar-nav">
+            <li>
+                @Html.ActionLink("Marie Stopes Clinic & Society", "Home", "Global", new { area = "" }, new { @class =  "brand fontss navbar-brand" })
+            </li>
+            <li class="test1">
+                @Html.ActionLink("Patient's Portal", "Index", "Patient", null, null)
+            </li>
+            <li class="test2">
+                @Html.ActionLink("Doctor's Portal", "Index", "Doctor", null, null)
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+
+            @if (um.isLoggedIn()) {
+
+            <li class="login1" style="top:16px">
+                Hello <span class="alert-success" > @User.Identity.Name </span> 
+            </li>
+            <li class="register">
+                @Html.ActionLink("Sign Out", "SignOut", "UserAuth", null, new { @class = "btn btn-danger btn-small" })
+            </li>
+
+            }
+            else
+            {
+
+                <li class="login">
+                    @*<span class="glyphicon glyphicon-user"></span>*@ @Html.ActionLink("Login","Login", "UserAuth", null, new { @class="rightal" })
+                </li>
+            }
+            
+
+            
+            <li class="date">
+                @DateTime.Now.ToString("r")
+            </li>
+        </ul>
+    </nav>
+    <!--Changesssss-->
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        
+            <footer class="text-center">
+                <p>MSCS Software Department&copy; @DateTime.Now.Year - Sourav</p>
+            </footer>
+        
+        
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
